@@ -5,7 +5,9 @@ function fetchTweets(){
 			from:moment().subtract(1,'hours').toJSON(),
 			to:moment().toJSON()
 		},
-		success:function(){
+		success:function(data){
+			console.log(data);
+			draw(data);
 		}
 	});
 	
@@ -14,7 +16,9 @@ function fetchTweets(){
 
 fetchTweets();
 
-Raphael('worldmap','100%','100%',function() {
+function draw(data){
+	
+	Raphael('worldmap','100%','100%',function() {
 
     var r = this;
 		
@@ -87,3 +91,6 @@ Raphael('worldmap','100%','100%',function() {
       }
     };*/
 });
+	
+}
+
