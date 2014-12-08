@@ -6,17 +6,18 @@ function fetchTweets(){
 			to:moment().toJSON()
 		},
 		success:function(data){
-			console.log(data);
 			draw(data);
 		}
 	});
-	
-	
 }
 
 fetchTweets();
 
 function draw(data){
+	
+	var happy = '#ff0000';
+	var sad = '#00ff00';
+	var bitch = '#ffff00';
 	
 	Raphael('worldmap','100%','100%',function() {
 
@@ -37,11 +38,32 @@ function draw(data){
 				
     r.setStart();
 		
-    for(var country in worldmap.shapes) {
+		for(var country in worldmap.shapes) {
 		
 			var path = worldmap.shapes[country];
       r.path(path).attr({stroke: "#ccc6ae", fill: "#eeeeee", "stroke-opacity": 0.25});
     }
+		
+		var summary;
+	
+		for(var i=0;i<data.length;i++){
+			
+			summary = data[i];
+			
+			var path = worldmap.shapes[summary.country.code];
+			
+			if(summary.average > 0.5){
+			
+				r.path(path).attr({stroke: "#ccc6ae", fill: happy, "stroke-opacity": 0.25});
+			}else if(summary.average < 0.5 && summary.average > 0){
+			
+				r.path(path).attr({stroke: "#ccc6ae", fill: sad, "stroke-opacity": 0.25});
+				
+			}else{
+			
+				r.path(path).attr({stroke: "#ccc6ae", fill: bitch, "stroke-opacity": 0.25});
+			}
+		}
 		
     var world = r.setFinish();
 	
@@ -75,9 +97,9 @@ function draw(data){
             lon = -lon;
         }
         return this.getXY(lat, lon);
-    };
+    };*/
 		
-    cities.onclick = function (e) {
+    /*cities.onclick = function (e) {
       e = e || window.event;
       var target = e.target || e.srcElement || document;
       if (target.tagName == "A") {

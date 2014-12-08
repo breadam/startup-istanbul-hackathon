@@ -51,9 +51,11 @@ app.get('/tweets',function(req,res){
 	var input = req.query;
 	
 	Summary.find({
-		date:{$lt:input.to,$gt:input.from}
-	}).populate('country').exec(function(err,summaries){
 	
+		date:{$lt:input.to,$gt:input.from}
+		
+	}).populate('country').exec(function(err,summaries){
+		
 		res.json(summaries);	
 	});
 });
