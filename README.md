@@ -10,7 +10,10 @@ Additional repository: https://github.com/fmguler/SentimentAnalysis
 
 [![Koding Hackathon](/images/badge.png?raw=true "Koding Hackathon")](https://koding.com/Hackathon)
 
+
 The pursuit of happiness is defined as a fundamental right mentioned in the Declaration of Independence. We believe that the ultimate problem in the world is the lack of happiness. Thus, we decided to measure happiness by a Real-time Global Happiness Index. We created an interactive visualisation of happiness around the world using state of the art Deep Learning based Natural Language Processing algorithms tracking hourly Twitter Sentiment by country.
+
+![Happiness](http://likeafrog.files.wordpress.com/2011/12/happy-sad-1.jpg)
 
 ## Screenshots
 
