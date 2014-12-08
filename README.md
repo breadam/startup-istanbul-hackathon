@@ -15,13 +15,14 @@ The pursuit of happiness is defined as a fundamental right mentioned in the Decl
 
 ![Happiness](http://likeafrog.files.wordpress.com/2011/12/happy-sad-1.jpg)
 
-## Screenshots
+## Screenshots from Development
+We used a 
 
-Here provide couple screenshots of your project. You can use a tool like https://monosnap.com/welcome or https://droplr.com to take a screenshot. Animated gifs are also welcome.
 
-![Koding](https://koding.com/a/site.landing/images/slideshow/2x/ss-terminal.png "Koding")
-![Koding](https://koding.com/a/site.landing/images/slideshow/2x/ss-ide.png "Koding")
+![StartupIstanbul](http://i.imgur.com/smkKwQS.png)
+![StartupIstanbul](http://i.imgur.com/IYKcN8N.png)
+![StartupIstanbul](http://i.imgur.com/nSSW5Ni.png)
 
 ## APIs used
 
-nodejs, Stanford CoreNLP library, Java, Raphaël, nginx
+nodejs, mongoDB, Stanford CoreNLP library, Java, Raphaël, nginx
