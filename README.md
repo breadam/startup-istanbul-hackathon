@@ -20,7 +20,7 @@ We used Twitter API, NodeJS and MongoDB to collect hourly tweets from 162 countr
 
 
 ## Screenshots from Development
-We had an Online-Ofline mixed experience in this Hackathon. For offline meetings we used our local Starbucks and for online sessions ve used Koding, Join.me, TeamViewer, Skype, Gmail and even Facebook.
+We had an Online-Offline mixed experience during this Hackathon. For offline meetings we used our local Starbucks and for online sessions ve used Koding, Join.me, TeamViewer, Skype, Gmail and even Facebook.
 
 
 ![StartupIstanbul](http://i.imgur.com/smkKwQS.png)
