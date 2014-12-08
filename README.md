@@ -4,11 +4,13 @@ STARTUP ISTANBUL TEAM
 
 This is the submission repository of the team Startup Istanbul for the [Koding Global Hackathon](https://koding.com/Hackathon).
 
+Additional repository: https://github.com/fmguler/SentimentAnalysis
+
 ## Description
 
 [![Koding Hackathon](/images/badge.png?raw=true "Koding Hackathon")](https://koding.com/Hackathon)
 
-A brief introduction to your project. It should include the motivation behind the project and also how it addresses the hackthon theme you've selected.
+The pursuit of happiness is defined as a fundamental right mentioned in the Declaration of Independence. We believe that the ultimate problem in the world is the lack of happiness. Thus, we decided to measure happiness by a Real-time Global Happiness Index. We created an interactive visualisation of happiness around the world using state of the art Deep Learning based Natural Language Processing algorithms tracking hourly Twitter Sentiment by country.
 
 ## Screenshots
 
