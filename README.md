@@ -19,4 +19,4 @@ Here provide couple screenshots of your project. You can use a tool like https:/
 
 ## APIs used
 
-nodejs, Stanford CoreNLP, Java, raphaeljs, nginx
+nodejs, Stanford CoreNLP library, Java, Raphaël, nginx
