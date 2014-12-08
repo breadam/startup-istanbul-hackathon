@@ -1,17 +1,43 @@
-function fetchTweets(){
+$('input[type="range"]').rangeslider({
+
+    // Feature detection the default is `true`.
+    // Set this to `false` if you want to use
+    // the polyfill also in Browsers which support
+    // the native <input type="range"> element.
+    polyfill: false,
+
+    // Default CSS classes
+    rangeClass: 'rangeslider',
+    fillClass: 'rangeslider__fill',
+    handleClass: 'rangeslider__handle',
+
+    // Callback function
+    onInit: function() {},
+
+    // Callback function
+    onSlide: function(position, value) {},
+
+    // Callback function
+    onSlideEnd: function(position, value) {
+			
+			fetchTweets(value);
+			
+		}
+});
+
+function fetchTweets(val){
+	
+	var now = moment();
 	
 	$.ajax('http://localhost:8888/tweets',{
 		data:{
-			from:moment().subtract(1,'hours').toJSON(),
-			to:moment().toJSON()
+			date:now.hours(val,'hours').minutes(0).seconds(0).milliseconds(0).subtract(1,'days').toJSON()
 		},
 		success:function(data){
 			draw(data);
 		}
 	});
 }
-
-fetchTweets();
 
 function draw(data){
 	
@@ -115,4 +141,5 @@ function draw(data){
 });
 	
 }
+
 

@@ -52,7 +52,7 @@ app.get('/tweets',function(req,res){
 	
 	Summary.find({
 	
-		date:{$lt:input.to,$gt:input.from}
+		date:input.date
 		
 	}).populate('country').exec(function(err,summaries){
 		
