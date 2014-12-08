@@ -3,7 +3,7 @@ var async = require('async');
 
 module.exports = function(tweets){
 	
-	var page = 10;
+	var page = 5;
 	var pageCount = tweets.length/page;
 	var start,end;
 	var batches = [];
@@ -52,7 +52,7 @@ module.exports = function(tweets){
 					toBeSaved.push(tweet);
 				}
 				
-				async.mapLimit(toBeSaved,10,function(tweet,cb){
+				async.mapLimit(toBeSaved,1,function(tweet,cb){
 			
 					console.log(tweet.createdAt);
 					
@@ -94,7 +94,7 @@ module.exports = function(tweets){
 		});
 	}
 	
-	async.mapLimit(batches,2,analyzeTweets,function(){
+	async.mapLimit(batches,4,analyzeTweets,function(){
 		
 		console.log('done analyzing');
 	});

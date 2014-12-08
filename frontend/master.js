@@ -31,7 +31,7 @@ function fetchTweets(val){
 	
 	$.ajax('http://localhost:8888/tweets',{
 		data:{
-			date:now.hours(val,'hours').minutes(0).seconds(0).milliseconds(0).subtract(1,'days').toJSON()
+			date:now.hours(val,'hours').minutes(0).seconds(0).milliseconds(0).toJSON()
 		},
 		success:function(data){
 			draw(data);
@@ -41,9 +41,8 @@ function fetchTweets(val){
 
 function draw(data){
 	
-	var happy = '#ff0000';
-	var sad = '#00ff00';
-	var bitch = '#ffff00';
+	var happy = '#0000ff';
+	var sad = '#ff0000';
 	
 	Raphael('worldmap','100%','100%',function() {
 
@@ -78,16 +77,15 @@ function draw(data){
 			
 			var path = worldmap.shapes[summary.country.code];
 			
+			summary.average = (summary.average + 1.0) / 2.0;
+			
 			if(summary.average > 0.5){
 			
 				r.path(path).attr({stroke: "#ccc6ae", fill: happy, "stroke-opacity": 0.25});
-			}else if(summary.average < 0.5 && summary.average > 0){
+			}else{
 			
 				r.path(path).attr({stroke: "#ccc6ae", fill: sad, "stroke-opacity": 0.25});
 				
-			}else{
-			
-				r.path(path).attr({stroke: "#ccc6ae", fill: bitch, "stroke-opacity": 0.25});
 			}
 		}
 		

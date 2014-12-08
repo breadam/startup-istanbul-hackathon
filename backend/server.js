@@ -50,6 +50,8 @@ app.get('/tweets',function(req,res){
 	
 	var input = req.query;
 	
+	console.log(input.date);
+	
 	Summary.find({
 	
 		date:input.date
