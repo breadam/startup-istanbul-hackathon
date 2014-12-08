@@ -13,9 +13,9 @@ module.exports = function(tweets){
 		unirest.post("http://app.intelligentsearchassistant.com/main/analyzeTweet.htm")
 			//.header("X-Mashape-Key", "e6jk7742uzmshc1Q6Bmyi2nZstr9p1wHmTNjsnE72AAsdf5FhP")
 			.header("Content-Type", "multipart/form-data")
-			.field("tweets", batch)
-			.field("start", start)
-			.field("end", end)
+			.field("tweets", batch.str)
+			.field("start", batch.start)
+			.field("end", batch.end)
 			//.field("endpoints", "sentiment")
 			//.field("entities_type", "text")
 			//.field("output_format", "json")
@@ -42,18 +42,29 @@ module.exports = function(tweets){
 				var tweet;
 				var start = body.object.start;
 				var end = body.object.end;
+				var toBeSaved = [];
 				
 				for(var j=start;j<end;j++){
 				
 					tweet = tweets[j];
 					tweet.sentiment = body.object.list[j-start];
 					tweet.calculated = true;
-					tweet.save(function(){
-					
-						console.log('tweet saved');
-					});
+					toBeSaved.push(tweet);
 				}
-				callback();
+				
+				async.mapLimit(toBeSaved,10,function(tweet,cb){
+			
+					console.log(tweet.createdAt);
+					
+					tweet.save(function(){
+						console.log('tweet saved');
+						cb();
+					});
+					
+				},function(){
+					console.log('batch saved');
+					callback()
+				});
 		});
 		
 	}
@@ -76,10 +87,15 @@ module.exports = function(tweets){
 			allTweets += tweets[j].text + "\n";
 		}
 		
-		batches.push(allTweets);
+		batches.push({
+			start:start,
+			end:end,
+			str:allTweets
+		});
 	}
 	
-	async.mapLimit(batches,4,analyzeTweets,function(){
+	async.mapLimit(batches,2,analyzeTweets,function(){
+		
 		console.log('done analyzing');
 	});
 	
