@@ -16,8 +16,7 @@ The Pursuit of Happiness is defined as a fundamental right mentioned in the Decl
 ![Happiness](http://likeafrog.files.wordpress.com/2011/12/happy-sad-1.jpg)
 
 ## Technology
-We used Twitter API, NodeJS and MongoDB to collect hourly tweets from 162 countries around the world. We tried and compared all of the sentiment analysis API's in Mashape.com. Because of the limitations of the free tier API's we end up depoying our own Sentiment Analysis (powered by Stanford CoreNLP library) REST service on nginx server. We used Raphael and custom CSS/JS for visualization.
-
+We used Twitter API, NodeJS and MongoDB to collect hourly tweets from 162 countries around the world. We tried and compared all of the sentiment analysis API's in Mashape.com. Because of the limitations of the free tier API's we ended up developing and depoying our own Sentiment Analysis (powered by Stanford CoreNLP library) REST service on nginx server. We used Raphael and custom CSS/JS for visualization.
 
 ## Screenshots from Development
 We had an Online-Offline mixed experience during this Hackathon. For offline meetings we used our local Starbucks and for online sessions ve used Koding, Join.me, TeamViewer, Skype, Gmail and even Facebook.
