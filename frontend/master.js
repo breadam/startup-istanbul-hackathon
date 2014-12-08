@@ -12,7 +12,11 @@ $('input[type="range"]').rangeslider({
     handleClass: 'rangeslider__handle',
 
     // Callback function
-    onInit: function() {},
+    onInit: function() {
+			var h = moment().hours();
+			
+			fetchTweets(h);
+		},
 
     // Callback function
     onSlide: function(position, value) {},
@@ -43,6 +47,8 @@ function draw(data){
 	
 	var happy = '#0000ff';
 	var sad = '#ff0000';
+	
+	$('#worldmap').html('');
 	
 	Raphael('worldmap','100%','100%',function() {
 
