@@ -4,7 +4,7 @@ STARTUP ISTANBUL TEAM
 
 This is the submission repository of the team Startup Istanbul for the [Koding Global Hackathon](https://koding.com/Hackathon).
 
-Additional repository: https://github.com/fmguler/SentimentAnalysis
+Additional public repository created during hackathon: https://github.com/fmguler/SentimentAnalysis
 
 ## Description
 
