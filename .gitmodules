@@ -1,0 +1,3 @@
+[submodule "SentimentAnalysis"]
+	path = SentimentAnalysis
+	url = https://github.com/fmguler/SentimentAnalysis
